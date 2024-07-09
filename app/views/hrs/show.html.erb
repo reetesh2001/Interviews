@@ -11,17 +11,7 @@
   <h2>Status:</h2>
   <%= @hr.status %>
 </p>
-<h2>Phone</h2>
-<%=@hr.phone_number%>
+<h2>Phone</h2><%=@hr.phone_number%>
 <%= link_to 'Edit Profile', edit_hr_path %>
 <%= link_to 'Back', hrs_path %>
 <li><%= link_to "Destroy", hr_path(@hr), data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %></li>
-
-
-
-
-
-
-
-
-
