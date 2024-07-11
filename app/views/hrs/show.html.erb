@@ -15,4 +15,10 @@
 <%= link_to 'Edit Profile', edit_hr_path %>
 <%= link_to 'Back', hrs_path %>
 <li><%= link_to "Destroy", hr_path(@hr), data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %></li>
+<br>
 <%= link_to 'Add Candidate', new_hr_candidate_path(@hr) %>
+<br>
+<%= link_to 'Edit Candidate', edit_hr_candidate_path(@hr) %>
+<br>
+<%= link_to 'Candidates', hr_candidates_path(@hr) %>
+
