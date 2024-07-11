@@ -1,2 +1,36 @@
-<h1>Candidates#index</h1>
+<h1>List of Candidates</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Role</th>
+      <th>HR ID</th>
+      <th>Qualification</th>
+      <th>College</th>
+      <th>Experience</th>
+      <th>Company</th>
+      <th>Technology</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.name %></td>
+        <td><%= candidate.email %></td>
+        <td><%= candidate.phone %></td>
+        <td><%= candidate.role %></td>
+        <td><%= candidate.hr_id %></td>
+        <td><%= candidate.qualification %></td>
+        <td><%= candidate.college %></td>
+        <td><%= candidate.experience %></td>
+        <td><%= candidate.company %></td>
+        <td><%= candidate.technology %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
