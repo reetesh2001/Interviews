@@ -1,0 +1,28 @@
+<h1>User Profile<h1>
+<p>
+  <h2>Name:</h2>
+  <%= @hr.name %>
+</p>
+<p>
+  <h2>Email:</h2>
+  <%= @hr.email%>
+</p>
+<p>
+  <h2>Status:</h2>
+  <%= @hr.status %>
+</p>
+<h2>Phone</h2><%=@hr.phone_number%>
+<%= link_to 'Edit Profile', edit_hr_path %>
+<%= link_to 'Back', hrs_path %>
+<li><%= link_to "Destroy", hr_path(@hr), data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %></li>
+<br>
+<%= link_to 'Add Candidate', new_hr_candidate_path(@hr) %>
+<br>
+<%= link_to 'Edit Candidate', edit_hr_candidate_path(@hr) %>
+<br>
+<%= link_to 'Candidates', hr_candidates_path(@hr) %>
+<br>
+<%= link_to 'Add Candidate', new_hr_employee_path(@hr) %>
+<br>
+<%= link_to 'Employee', hr_employees_path(@hr) %>
+
