@@ -13,6 +13,7 @@
       <th>Experience</th>
       <th>Company</th>
       <th>Technology</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +29,9 @@
         <td><%= candidate.experience %></td>
         <td><%= candidate.company %></td>
         <td><%= candidate.technology %></td>
+        <td>
+              <%= button_to 'Delete', hr_candidate_path(@hr, candidate), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
         
       </tr>
     <% end %>

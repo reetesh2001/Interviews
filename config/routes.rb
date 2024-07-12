@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'hrs#index'
   resources :hrs do
     resources :candidates
+    resources :employees
   end
 
 end

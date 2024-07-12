@@ -32,6 +32,12 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def destroy
+    @candidate = @hr.candidates.find(params[:id])
+    @candidate.destroy
+    redirect_to hr_candidates_path(@hr)
+  end
+
   private
 
   def find_hr
