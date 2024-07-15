@@ -1,7 +1,8 @@
 class HrsController < ApplicationController
-    skip_before_action :authenticate_user!, only: [:index, :new, :create]
+    skip_before_action :authenticate_user!, only: [:new, :create]
 
     def index
+        render :index
     end
 
     def show
@@ -13,37 +14,37 @@ class HrsController < ApplicationController
     end
 
     def create
-        @hr = Hr.new(hr_params)
-        if @hr.save
-         session[:user_id]=@hr.id
-         redirect_to @hr
-        else
-         render :new
-        end
+      @hr = Hr.new(hr_params)
+      if @hr.save
+        session[:user_id]=@hr.id
+        redirect_to @hr
+      else
+          render :new
+      end
     end
 
     def edit
-        @hr = Hr.find(params[:id])
+      @hr = Hr.find(params[:id])
     end
 
     def update
-        @hr = Hr.find(params[:id])
-        if @hr.update(hr_params)
-            redirect_to @hr
-        else
-            render :edit
-        end
+      @hr = Hr.find(params[:id])
+      if @hr.update(hr_params)
+        redirect_to @hr
+      else
+        render :edit
+      end
     end
 
     def destroy
-        @article = Hr.find(params[:id])
-        @article.destroy
-        redirect_to root_path, status: :see_other
+      @hr = Hr.find(params[:id])
+      @hr.destroy
+      redirect_to root_path, status: :see_other
     end
 
     private
     def hr_params
-        params.require(:hr).permit(:name, :email, :status, :password, :phone_number)
+      params.require(:hr).permit(:name, :email, :status, :password, :phone_number)
     end
 
 end

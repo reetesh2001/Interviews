@@ -19,6 +19,12 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def destroy
+    @employee = @hr.employees.find(params[:id])
+    @employee.destroy
+    redirect_to hr_employees_path(@hr)
+  end
+
   private
 
   def set_hr
