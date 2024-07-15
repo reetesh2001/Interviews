@@ -1,0 +1,2 @@
+class Interv < ApplicationRecord
+end

@@ -11,13 +11,7 @@
   </head>
 
   <body>
-     <nav>
-      <% if current_user %>
-        <%= button_to "Logout", logout_path, method: :delete%>
-      <% else %>
-        <%= link_to "Log In", login_path %>
-      <% end %>
-    </nav>
+    <%= render "shared/navbar" %>
     <%= yield %>
   </body>
 </html>

@@ -15,7 +15,9 @@
         <td><%= employee.name %></td>
         <td><%= employee.email %></td>
         <td><%= employee.phone %></td>
-        <td><%= employee.date_of_interview %></td>
+        <td>
+              <%= button_to 'Delete', hr_employee_path(@hr, employee), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

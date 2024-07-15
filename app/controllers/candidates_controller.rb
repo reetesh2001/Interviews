@@ -24,7 +24,6 @@ class CandidatesController < ApplicationController
 
   def update
     @candidate = Candidate.find_by(email: params[:email])
-    debugger
     if @candidate.update(candidate_params)
       redirect_to hr_path(@hr)
     else
