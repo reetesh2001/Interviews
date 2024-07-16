@@ -4,7 +4,7 @@ class CandidatesController < ApplicationController
   def index
     @candidates = @hr.candidates.all
   end
-
+  
   def new
     @candidate = @hr.candidates.build
   end
@@ -12,7 +12,7 @@ class CandidatesController < ApplicationController
   def create
     @candidate = @hr.candidates.build(candidate_params)
     if @candidate.save
-      redirect_to hr_path(@hr)
+      redirect_to hr_path(@hr), notice: 'Candidate was successfully created.'
     else
       render :new
     end

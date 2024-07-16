@@ -1,0 +1,29 @@
+<h1>Scheduled Interview</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Feedback</th>
+      <th>Round</th>
+      <th>Interview_time</th>
+      <th>Employee</th>
+      <th>Candidate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @intervs.each do |interv| %>
+      <tr>
+        <td><%= interv.status %></td>
+        <td><%= interv.feedback %></td>
+        <td><%= interv.round %></td>
+        <td><%=interv.interview_time%></td>
+        <td><%= interv.employee_id %></td>
+        <td><%= interv.candidate_id %></td>
+        <td>
+            <%= button_to 'Delete', hr_interv_path(@hr, interv), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
