@@ -1,0 +1,46 @@
+<div class="grid-container">
+  
+  <div class="user">
+    <h1>User Profile<h1></h1>
+    <p>
+      <h2>Name:</h2>
+      <%= @hr.name %>
+    </p>
+    <p>
+      <h2>Email:</h2>
+      <%= @hr.email%>
+    </p>
+    <p>
+      <h2>Status:</h2>
+      <%= @hr.status %>
+    </p>
+    <p>
+      <h2>Phone</h2>
+      <%=@hr.phone_number%>
+    </p>
+    <p>
+      <%= link_to 'Edit', edit_hr_path %>
+    </p>
+   
+    <p>
+      <%= link_to "Delete", hr_path(@hr), data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %>
+    </p>
+  </div>
+
+  <div class="option">
+    <%= link_to 'Add Candidate', new_hr_candidate_path(@hr) %>
+    <%= link_to 'Edit Candidate', edit_hr_candidate_path(@hr) %>
+    <%= link_to 'Candidates', hr_candidates_path(@hr) %>
+    <%= link_to 'Add Employee', new_hr_employee_path(@hr) %>
+    <%= link_to 'Employee', hr_employees_path(@hr) %>
+    <%= link_to 'Schedule Interview', new_hr_interv_path(@hr) %>
+    <%= link_to 'Interviews', hr_intervs_path(@hr) %>
+  </div>
+
+</div>
+
+
+
+
+
+

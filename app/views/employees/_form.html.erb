@@ -1,0 +1,29 @@
+<div class="container">
+<h1 id="employee">Add Employee</h1>
+
+<%= form_with(model: [@hr, @employee], local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :phone %>
+    <%= form.text_field :phone, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :department %>
+    <%= form.text_field :department, required: true %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
