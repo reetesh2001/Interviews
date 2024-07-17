@@ -1,5 +1,5 @@
 class HrsController < ApplicationController
-    skip_before_action :authenticate_user!, only: :index
+    skip_before_action :authenticate_user!, only: [:index, :new, :create]
 
     def index
     end
